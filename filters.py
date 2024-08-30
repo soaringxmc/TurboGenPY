@@ -33,7 +33,7 @@ def spectralcutoff(u, kappa, cx, cy, cz):
 #  ny = len(u[0,:,0])
 #  nz = len(u[0,0,:])  
 #  nt= nx*ny*nz  
-#  uh = fftn(u)/nt  
+#  uh = fftn(u)/nt
 #  for i in range(0,nx):
 #    for j in range (0,ny):
 #      for k in range (0,nz):      
@@ -58,7 +58,7 @@ def boxfilter(u):
   ut[:,0,:] = ut[:,ny,:]
   ut[:,ny+1,:] = ut[:,1,:]
   ut[:,:,0] = ut[:,:,nz]
-  ut[:,:,nz+1] = ut[:,:,1]    
+  ut[:,:,nz+1] = ut[:,:,1]
 
   for i in range(0,nx):
     for j in range (0,ny):

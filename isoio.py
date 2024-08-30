@@ -71,7 +71,7 @@ def writefile(filename, velcomponent, dx, dy, dz, velarray, fileformat):
       for j in range(0,ny):
         for i in range(0,nx):
           u = velarray[i,j,k]              
-          f.write('%.16f\n' % u)        
+          f.write('%.16f\n' % u)
   f.close()
   t1 = time.time()
   print ('Done writing to disk in ', t1 - t0, 's')

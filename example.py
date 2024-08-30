@@ -113,7 +113,8 @@ if args.spectrum:
 	inputspec = args.spectrum
 
 # specify the spectrum name to append to all output filenames
-fileappend = inputspec + '_' + str(nx) + '.' + str(ny) + '.' + str(nz) + '_' + str(nmodes) + '_modes'
+# fileappend = inputspec + '_' + str(nx) + '.' + str(ny) + '.' + str(nz) + '_' + str(nmodes) + '_modes'
+fileappend = inputspec
 
 print('input spec', inputspec)
 if inputspec != 'cbc' and inputspec != 'vkp' and inputspec != 'kcm' and inputspec != 'pq':
@@ -126,7 +127,7 @@ inputspec += '_spectrum'
 whichspec = getattr(spectra, inputspec)().evaluate
 
 # write to file
-enableIO = False  # enable writing to file
+enableIO = True  # enable writing to file
 io = args.output
 if io:
 	enableIO = io
@@ -217,6 +218,7 @@ if computeMean:
 	print('u fluc rms = ', np.sqrt(ufrms))
 	print('v fluc rms = ', np.sqrt(vfrms))
 	print('w fluc rms = ', np.sqrt(wfrms))
+	print('sqrt(tke) = ', np.sqrt(0.5*(ufrms + vfrms + wfrms)))
 
 # check divergence
 if checkdivergence:
